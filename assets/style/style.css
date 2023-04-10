@@ -1,0 +1,84 @@
+@import url(reset.css);
+
+:root {
+  --app-bg: #f2f3f4;
+  --app-bg-blue: #3487f3;
+  --app-bg-orange: #d47215;
+  --app-bg-purple: #6a1fc0;
+  --app-bg-dark: #1c1c1c;
+  --app-header-bg: #46474d;
+  --app-bg-green: #4dcc3c;
+  --app-blue-hover: #4896fc;
+  --app-red: #ff3c57;
+  --app-red-hover: #ff2846;
+  --app-text: #e0d9d9;
+}
+
+body {
+  background-color: var(--app-bg-dark);
+}
+
+.container {
+  width: min(100% - 30px, 1280px);
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  height: 100vh;
+  min-width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0 0 0 0;
+  min-width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: grid;
+  place-items: center;
+  background-color: var(--app-bg-dark);
+  z-index: 9999;
+}
+
+.overlay .loading {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgb(255 255 255 / 0.8);
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: rotate 1.25s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
