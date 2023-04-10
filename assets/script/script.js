@@ -39,6 +39,7 @@ function getLocation(position) {
     map.flyTo({
       center: [longitude, latitude],
       essential: true,
+      zoom: 16
     });
     marker.setLngLat([longitude, latitude]).addTo(map);
     setTimeout(() => {
